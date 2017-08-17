@@ -55,5 +55,20 @@ app.controller('MainController', ['$http', function($http){
 				console.log(err);
 			}
 		);
-	}
+	};
+this.deleteGame = function(game){	
+		console.log('delete route');
+		$http({
+			method: "DELETE",
+			url: "/games/" + game._id,
+		}).then(
+			function(response){
+				console.log(response);
+				controller.getGames();
+			},
+			function(err){
+				console.log(err);
+			}
+		);
+	};
 }]);
