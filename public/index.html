@@ -9,7 +9,7 @@
 <body ng-controller="MainController as ctrl">
 
 	<ul>
-		<li ng-repeat="game in ctrl.games">{{game.title}}</li>
+		<li ng-repeat="game in ctrl.games">{{game.title}} - {{game.year}} - {{game.description}} </li>
 	</ul>
 
 	<form ng-submit="ctrl.createGame();">
