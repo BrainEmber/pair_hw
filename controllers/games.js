@@ -3,11 +3,15 @@ const router = express.Router();
 const Games = require('../models/games.js');
 
 router.get('/', (req, res)=>{
-	res.send('index route');
+	Games.find({}, (err, foundGames)=>{
+	res.json(foundGames);
+	});
 });
 
 router.post('/', (req, res)=>{
-	res.send('post route');
+	Games.create(req.body, (err, createdGame)=>{
+		res.json(createdGame);
+	});
 });
 
 router.delete('/', (req, res)=>{
