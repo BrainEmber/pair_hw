@@ -19,7 +19,9 @@ router.delete('/', (req, res)=>{
 });
 
 router.put('/:id', (req, res)=>{
-	res.send('put route');
+	Games.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedGame)=>{
+		res.json(updatedGame);
+	})
 });
 
 module.exports = router;
