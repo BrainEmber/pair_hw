@@ -12,7 +12,7 @@ app.use('/games', GamesController);
 mongoose.connect("mongodb://localhost:27017/games");
 mongoose.connection.once('open', ()=>{
 	console.log('connected to mongo');
-})
+});
 
 
 app.listen(3000, ()=>{
