@@ -14,14 +14,16 @@ router.post('/', (req, res)=>{
 	});
 });
 
-router.delete('/', (req, res)=>{
-	res.send('delete route');
+router.delete('/:id', (req, res)=>{
+	Games.findByIdAndRemove(req.params.id, req.body, (err, deletedGame)=>{
+		res.json(deletedGame);
+	});
 });
 
 router.put('/:id', (req, res)=>{
 	Games.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedGame)=>{
 		res.json(updatedGame);
-	})
+	});
 });
 
 module.exports = router;
