@@ -15,6 +15,21 @@ app.controller('MainController', ['$http', function($http){
 
 		});
 	};
+	this.createGame = function(){
+		$http({
+			method: 'POST',
+			url: '/games',
+			data: {
+				title: this.title,
+				description: this.description,
+				year: this.year
+		}
+		}).then(
+		function(response){
+			controller.getGames();
+		},
+		function(error){
 
-	
+		});
+	};
 }]);

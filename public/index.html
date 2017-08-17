@@ -12,5 +12,11 @@
 		<li ng-repeat="game in ctrl.games">{{game.title}}</li>
 	</ul>
 
+	<form ng-submit="ctrl.createGame();">
+		<input type="text" ng-model="ctrl.title" placeholder="Title of game">
+		<input type="text" ng-model="ctrl.year" placeholder="Year produced">
+		<input type="text" ng-model="ctrl.description" placeholder="Gameplay description">
+		<input type="submit" value="Create Game Info">
+	</form>
 </body>
 </html>
