@@ -8,28 +8,30 @@
 </head>
 <body ng-controller="MainController as ctrl">
 
-		<h3>Retro Games</h3>
+		<h2>Retro Games</h2>
 	<ul>
 		<li
 		ng-repeat="game in ctrl.games">{{game.title}} - {{game.year}} - {{game.description}}
 		<!-- <button ng-show="";>Edit</button> -->
-		<h4>Edit this Game</h4>
+		<h4>Edit this Game:</h4>
 		<form ng-submit="ctrl.editGame(game);">
 			<input type="text" ng-model="ctrl.updatedTitle" placeholder="Title of game">
 			<input type="text" ng-model="ctrl.updatedYear" placeholder="Year produced">
 			<input type="text" ng-model="ctrl.updatedDescription" placeholder="Gameplay description">
 			<input type="submit" value="Update Game Info">
-			<br/>
-			<br/>
-			<br/>
-			<br/>
 		</form>
+
 		<button ng-click="ctrl.deleteGame(game);">Delete this mofo</button>
+		<br/>
+		<br/>
+		------------------------------------------------------------------------
+				<br/>
+		<br/>
+		<br/>
 		</li>
-
-
 	</ul>
-	
+
+	<h4>Add new game info:</h4>
 	<form ng-submit="ctrl.createGame();">
 		<input type="text" ng-model="ctrl.title" placeholder="Title of game">
 		<input type="text" ng-model="ctrl.year" placeholder="Year produced">
