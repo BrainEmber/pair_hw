@@ -33,4 +33,27 @@ app.controller('MainController', ['$http', function($http){
 		});
 	};
 	this.getGames();
+
+	this.editGame = function(game){
+		console.log(game);
+		console.log('h1');
+
+		$http({
+			method: "PUT",
+			url: "/games/" + game._id,
+			data: {
+				title: this.updatedTitle,
+				description: this.updatedDescription,
+				year: this.updatedYear,
+			}
+		}).then(
+			function(response){
+				console.log(response);
+				controller.getGames();
+			},
+			function(err){
+				console.log(err);
+			}
+		);
+	}
 }]);

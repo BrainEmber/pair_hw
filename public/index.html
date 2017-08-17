@@ -9,7 +9,20 @@
 <body ng-controller="MainController as ctrl">
 
 	<ul>
-		<li ng-repeat="game in ctrl.games">{{game.title}} - {{game.year}} - {{game.description}} </li>
+		<li
+		ng-repeat="game in ctrl.games">{{game.title}} - {{game.year}} - {{game.description}}
+		<!-- <button ng-show="";>Edit</button> -->
+
+		<form ng-submit="ctrl.editGame(game);">
+			<input type="text" ng-model="ctrl.updatedTitle" placeholder="Title of game">
+			<input type="text" ng-model="ctrl.updatedYear" placeholder="Year produced">
+			<input type="text" ng-model="ctrl.updatedDescription" placeholder="Gameplay description">
+			<input type="submit" value="Update Game Info">
+		</form>
+
+		</li>
+
+
 	</ul>
 
 	<form ng-submit="ctrl.createGame();">
