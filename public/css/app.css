@@ -1,3 +1,9 @@
 body {
-	background-color: lavender;
+    text-align: center;
+    background-color: lavender;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0px;
 }
